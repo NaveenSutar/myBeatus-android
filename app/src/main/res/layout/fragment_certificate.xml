@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/dialog_main_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <WebView
+            android:id="@+id/verify_view"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:visibility="invisible"/>
+
+        <WebView
+            android:id="@+id/web_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/cert_bottom_navigation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.learningmachine.android.app.ui.LMProgressView
+            android:id="@+id/progress_bar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:alpha="0.3"
+            app:layout_constraintBottom_toBottomOf="@+id/web_view"
+            app:layout_constraintLeft_toLeftOf="@+id/web_view"
+            app:layout_constraintRight_toRightOf="@+id/web_view"
+            app:layout_constraintTop_toTopOf="@+id/web_view" />
+
+        <android.support.design.widget.BottomNavigationView
+            android:id="@+id/cert_bottom_navigation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:itemIconTint="@color/colorCertificateMenuItem"
+            app:menu="@menu/fragment_certificate_menu"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/cert_bottom_navigation"
+            android:background="@color/colorDivider"/>
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</layout>
